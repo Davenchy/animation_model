@@ -41,7 +41,7 @@ class AnimationModel {
     if (!_props.containsKey(key)) {
       throw Exception('property with key: $key is not defined yet!');
     }
-    return _props[key]!.getValueAt(pointer);
+    return _props[key]!.getValue(pointer);
   }
 
   /// calculate all properties values at [pointer] and return [Map]

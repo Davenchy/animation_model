@@ -204,7 +204,7 @@ class Breakpoint {
   /// returns value at the progress point [t]
   ///
   /// [t] is a value in range 0 included and 1 included
-  double getValueAt(double t) {
+  double getValue(double t) {
     final head = getHead();
     if (head.pointer >= t) return head.value;
     final p = head.findNext((p) => p.pointer >= t); // null, ==, >
@@ -243,8 +243,8 @@ class Breakpoint {
   /// alias for [add]
   void operator []=(double pointer, double value) => add(pointer, value);
 
-  /// alias for [getValueAt]
-  double operator [](double pointer) => getValueAt(pointer);
+  /// alias for [getValue]
+  double operator [](double pointer) => getValue(pointer);
 
   /// returns true if current point is after the [other] point
   bool operator >(Breakpoint other) => pointer > other.pointer;
